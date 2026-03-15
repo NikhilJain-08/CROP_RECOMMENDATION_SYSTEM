@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CropAdvisor — Crop Recommendation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="sidebar-header">
+  <div class="header-main">
+    <img src="LOGO.png" alt="Crop Advisor Logo" class="header-icon">
+    <div>
+      <span class="header-title">Crop Adviser</span>
+      <span class="header-desc">Smart Farming Assistant</span>
+      <span class="header-help">Enter soil and climate parameters to get suitable crop recommendations.</span>
+    </div>
+    <a href="index.html" class="home-simple-link">
+  <span class="home-simple-icon">🏠</span>
+  HOME
+</a>
+  </div>
+</header>
+
+
+
+  <div class="fancy-border">
+    <div class="container">
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <header class="app-head">
+        <div class="header-icon">🌾</div>
+        <div>
+          <h1>Crop Recommendation System</h1>
+          <p>Get crop suggestions based on soil and climate conditions...</p>
+        </div>
+      </header>
+
+      <div class="category-cards">
+        <div class="card">
+          <div class="card-icon">🌱</div>
+          <span>Soil Analysis</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">☔</div>
+          <span>Rainfall Data</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌡️</div>
+          <span>Temperature</span>
+        </div>
+        <div class="card">
+          <div class="card-icon">💧</div>
+          <span>Humidity</span>
+        </div>
+      </div>
+
+      <!-- PARAMETERS FORM -->
+      <div class="parameters-section">
+        <h2>Enter Parameters</h2>
+
+        <form id="paramsForm">
+
+          <fieldset>
+            <legend>Soil Parameters</legend>
+            <div class="params-row">
+              <div>
+                <label>Nitrogen (N):</label>
+                <input id="nitrogen" type="number" min="0" max="200" value="90">
+              </div>
+              <div>
+                <label>Phosphorus (P):</label>
+                <input id="phosphorus" type="number" min="0" max="200" value="42">
+              </div>
+            </div>
+
+            <div class="params-row">
+              <div>
+                <label>Potassium (K):</label>
+                <input id="potassium" type="number" min="0" max="200" value="43">
+              </div>
+              <div>
+                <label>pH Level:</label>
+                <input id="ph" type="number" step="0.01" min="0" max="14" value="6.5">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Climate Parameters</legend>
+            <div class="params-row">
+              <div>
+                <label>Temperature (°C):</label>
+                <input id="temp" type="number" min="-20" max="60" step="0.1" value="21">
+              </div>
+              <div>
+                <label>Humidity (%):</label>
+                <input id="hum" type="number" min="0" max="100" step="0.1" value="82">
+              </div>
+            </div>
+
+            <div class="params-row">
+              <div style="flex:2">
+                <label>Rainfall (mm)</label>
+                <input id="rain" type="range" class="range" min="0" max="600" value="200">
+                <div id="rain-val" style="text-align:right;font-weight:600;">200</div>
+              </div>
+            </div>
+          </fieldset>
+
+           <!-- CSV Selection Checklist (Creative) -->
+<div class="csv-checklist-section">
+  <h3>Select Data Region</h3>
+  <div class="region-options">
+    <label class="region-card">
+      <input type="radio" name="csvRegion" value="Bihar" checked>
+      <img src="I2.png" alt="Bihar" class="region-img">
+      <span class="custom-radio"></span>
+      Bihar
+    </label>
+    <label class="region-card">
+      <input type="radio" name="csvRegion" value="Uttar_Pradesh">
+      <img src="I1.png" alt="Uttar Pradesh" class="region-img">
+      <span class="custom-radio"></span>
+      Uttar Pradesh
+    </label>
+  </div>
+  <div class="region-desc">
+    <span>Choose your state to use the correct data for recommendations!</span>
+  </div>
+</div>
+
+
+          <div class="button-row-centered">
+  <button type="submit" class="main-btn recommend-btn" id="predict">Get Recommendation System</button>
+  <button type="button" class="main-btn reset-btn" id="reset">Reset</button>
+
+</div>
+
+
+        </form>
+
+        <!-- STATUS / STATS -->
+        <div class="sample-stat-card">
+  <div class="sample-stat-label">
+    <span>Samples Processed</span>
+  </div>
+  <div class="sample-stat-value" id="samples">0</div>
+</div>>
+</div>
+
+        <!-- RESULT CARD -->
+       <!-- In index.html or as part of result rendering in JS -->
+<div class="card result" id="result-card" style="display: none;">
+  <h2>Top Crop Matches</h2>
+  <div id="top-results-list"></div>
+</div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+
+  <footer class="footer-card-wide">
+  <div class="footer-main-row">
+    <div class="footer-college">
+      <img src="IIMT.png" alt="IIMT College Logo" class="footer-college-icon">
+      <div class="footer-college-info">
+        <span class="footer-college-title">IIMT College Of Engineering</span>
+        <span class="footer-college-project">....MINI PROJECT....</span>
+      </div>
+    </div>
+<nav class="footer-links footer-links-right">
+  <span class="footer-contact-label">Contact Us:</span>
+  <a href="https://wa.me/919026797422" target="_blank" rel="noopener" title="WhatsApp">
+    <img src="W.png" alt="WhatsApp">
+  </a>
+  <a href="https://instagram.com/_mr.jain_0808_" target="_blank" rel="noopener" title="Instagram">
+    <img src="I.png" alt="Instagram">
+  </a>
+  <a href="https://github.com/GodOfLove08" target="_blank" rel="noopener" title="GitHub">
+    <img src="G.png" alt="GitHub">
+  </a>
+</nav>
+
+
+</div>
+  </div>
+  <div class="footer-copy">
+    © 2025 IIMT Crop Adviser Project. All rights reserved.
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
